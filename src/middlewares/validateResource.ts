@@ -12,7 +12,7 @@ const validate =
         params: req.params,
       });
       next();
-    } catch (e: unknown) {
+    } catch (e: any) {
       if (e instanceof ZodError) {
         return res.status(400).json(e.errors);
       }
